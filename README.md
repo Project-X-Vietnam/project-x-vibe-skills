@@ -2,6 +2,8 @@
 
 AI agent skills for vibe coding your own project — clone this, install the skills, and AI agent will pick them up automatically based on what you ask for.
 
+Named after [Project X Vietnam](https://projectxvietnam.org) - A non-profit organization bridging the gap between academic learning and real-world tech careers.
+
 ## Install
 
 ```bash
