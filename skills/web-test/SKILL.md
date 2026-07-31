@@ -1,11 +1,11 @@
 ---
 name: web-test
-description: Browser-based QA testing with Playwright MCP. Triggers on "test in browser", "QA test", "visual test", "check the page".
+description: Browser-based QA testing for web pages and features. Use when asked to test in a browser, run QA or visual checks, verify responsive behavior, forms, navigation, or interactions; use Playwright when available and adapt to the project's configured browser-testing tool.
 ---
 
 # Web Test
 
-Browser-based QA testing using Playwright MCP to verify UI, interactions, and responsive behavior.
+Browser-based QA testing using Playwright or the project's configured browser-testing tool to verify UI, interactions, and responsive behavior.
 
 ## When to Use
 
@@ -22,8 +22,8 @@ Browser-based QA testing using Playwright MCP to verify UI, interactions, and re
 
 ## Prerequisites
 
-- Dev server running (`npm run dev`)
-- Playwright MCP configured in `.cursor/mcp.json`
+- Start the project's documented development server using its package manager (for example, `npm run dev`, `pnpm dev`, or `bun run dev`)
+- Use Playwright when it is configured or available. If it is not, use the connected browser tool or describe the exact manual checks required; do not require Cursor or `.cursor/mcp.json`.
 
 ## Core Principles
 
@@ -31,6 +31,7 @@ Browser-based QA testing using Playwright MCP to verify UI, interactions, and re
 - Verify visual appearance matches design intent
 - Test user interactions (clicks, form fills, navigation)
 - Check for console errors
+- Respect `prefers-reduced-motion` and test keyboard navigation
 
 ## Test Workflow
 

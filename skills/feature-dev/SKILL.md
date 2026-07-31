@@ -1,6 +1,6 @@
 ---
 name: feature-dev
-description: End-to-end feature implementation workflow. Triggers on "implement feature", "build feature", "develop", "create feature".
+description: End-to-end, stack-aware feature implementation workflow. Use when implementing a new page, component, integration, or multi-file feature; preserve the existing project's framework and conventions, or choose a suitable modern stack for a new project.
 ---
 
 # Feature Development
@@ -22,10 +22,11 @@ A structured 7-phase workflow for implementing features from discovery to comple
 
 ## Core Principles
 
+- Preserve the existing stack, architecture, design system, and package manager unless the user asks to change them
 - Reuse existing components before creating new ones
-- Follow the PXV design system (colors, typography, spacing)
-- Mobile-first responsive design
-- Animate thoughtfully with Framer Motion
+- Use design tokens and semantic HTML; build mobile-first responsive layouts
+- Prefer platform capabilities and CSS for simple visual effects; add an animation library only when it materially improves the experience
+- Choose a framework only for a new project or an explicitly requested migration; read `references/framework-selection.md` when making that choice
 
 ## The 7 Phases
 
@@ -44,10 +45,10 @@ A structured 7-phase workflow for implementing features from discovery to comple
 
 **Actions**:
 1. Read `AGENTS.md` for architecture overview
-2. Identify similar existing implementations (reference examples)
-3. Check `components/ui/` for reusable primitives
-4. Check `components/` for reusable custom components
-5. Review `tailwind.config.ts` and `globals.css` for available design tokens
+2. Inspect the project manifest, lockfile, app entry points, and existing configuration to identify the framework, router, styling, test runner, and package manager
+3. Identify similar existing implementations and reusable primitives/components
+4. Find design tokens in CSS variables, theme files, component libraries, or framework configuration; do not assume a `tailwind.config.*` file exists
+5. For a new project with no established stack, select one using `references/framework-selection.md` and state the reason briefly
 
 **Output**: List of reusable code and patterns found.
 
@@ -86,10 +87,10 @@ A structured 7-phase workflow for implementing features from discovery to comple
 6. Animations (last)
 
 **Rules**:
-- Use `"use client"` only when needed (state, effects, browser APIs)
-- Use shadcn/ui primitives as building blocks
-- Use `cn()` for conditional classes
-- Use Framer Motion `whileInView` for scroll animations
+- Follow the framework's rendering and client-boundary conventions (for example, use `"use client"` only where required in Next.js)
+- Reuse the project's component primitives; use shadcn/ui only when it is already present or explicitly selected
+- Follow the project's established styling and conditional-class patterns
+- Prefer CSS transitions, `prefers-reduced-motion`, and native platform APIs for simple effects; use a compatible animation library only when needed
 - Test each component as you build
 
 ### Phase 6: Review
@@ -99,11 +100,11 @@ A structured 7-phase workflow for implementing features from discovery to comple
 **Checklist**:
 - [ ] TypeScript: no `any` types, proper interfaces
 - [ ] Responsive: works on mobile (320px), tablet (768px), desktop (1280px)
-- [ ] Design system: uses PXV brand colors and typography
-- [ ] Components: reuses existing ui/ components
+- [ ] Design system: uses the project's tokens, typography, and components
+- [ ] Components: reuses existing primitives before adding dependencies
 - [ ] Accessibility: alt text, semantic HTML, keyboard navigation
 - [ ] Performance: images optimized, no unnecessary re-renders
-- [ ] Animations: smooth, no layout shifts, `viewport={{ once: true }}`
+- [ ] Animations: smooth, no layout shifts, and reduced-motion friendly
 
 ### Phase 7: Summary
 

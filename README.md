@@ -14,18 +14,26 @@ cd project-x-vibe-skills
 ./setup.sh
 ```
 
-This copies every skill into `~/.claude/skills/`, `~/.codex/skills/`, or any agents so they're available in **any** project you open — not just this one.
+By default, this copies every skill to `~/.agents/skills/`. Set `SKILLS_DEST` to install into a particular agent's skill directory:
 
-Restart your AI agent or start a new session afterward to pick them up.
+```bash
+# Codex
+SKILLS_DEST="$HOME/.codex/skills" ./setup.sh
 
-## Update
+# Claude Code
+SKILLS_DEST="$HOME/.claude/skills" ./setup.sh
+```
+
+The installer replaces only same-named skills at the selected destination. Restart the relevant AI agent or start a new session afterward.
+
+## Update an installed copy
 
 ```bash
 git pull
 ./setup.sh
 ```
 
-Re-running `setup.sh` overwrites the installed copies with whatever is currently in `skills/`.
+Re-run the same command you used for installation. For example, use `SKILLS_DEST="$HOME/.codex/skills" ./setup.sh` to refresh Codex's copy. The installer replaces each matching skill with the version from `skills/`.
 
 ## Skills in this repo
 

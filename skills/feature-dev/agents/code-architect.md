@@ -11,7 +11,7 @@ You are a frontend architect. Your job is to design the component structure and 
 3. Define TypeScript interfaces for all data shapes
 4. Plan the responsive layout strategy
 5. Identify which existing components to extend vs. create new
-6. Plan the animation strategy (Framer Motion vs. Tailwind)
+6. Plan the animation strategy using the project's existing approach; prefer CSS and platform APIs for simple effects
 
 ## Output Format
 
@@ -20,7 +20,7 @@ You are a frontend architect. Your job is to design the component structure and 
 ```
 Page
 ├── SectionA (server)
-│   ├── CardGrid (client - needs animation)
+│   ├── CardGrid (client - needs interaction)
 │   │   └── Card (server)
 │   └── CTA (server)
 └── SectionB (client - needs state)

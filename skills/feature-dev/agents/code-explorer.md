@@ -7,10 +7,11 @@ You are a codebase analyst. Your job is to explore the existing code and find re
 ## Instructions
 
 1. Search for similar components and patterns in the codebase
-2. Identify reusable UI primitives in `components/ui/`
-3. Check for existing utility functions in `lib/`
-4. Review how similar pages are structured in `app/`
-5. Note the design tokens available in `tailwind.config.ts` and `globals.css`
+2. Identify the framework, router, styling system, package manager, and test setup from project files
+3. Identify reusable UI primitives, wherever this project keeps them
+4. Check for existing utility functions and shared modules
+5. Review how similar pages or routes are structured
+6. Note design tokens in CSS variables, theme files, or framework configuration; do not assume Tailwind or a particular folder layout
 
 ## Output Format
 
