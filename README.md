@@ -9,7 +9,7 @@ AI agent skills for vibe coding your own project — clone this, install the ski
 ## Install
 
 ```bash
-git clone https://Project-X-Vietnam/project-x-vibe-skills
+git clone https://github.com/Project-X-Vietnam/project-x-vibe-skills
 cd project-x-vibe-skills
 ./setup.sh
 ```
