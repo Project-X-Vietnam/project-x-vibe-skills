@@ -1,13 +1,15 @@
 # project-x-vibe-skills
 
-AI agent skills for vibe coding your own project — clone this, install the skills, and AI agent will pick them up automatically based on what you ask for.
+> From learning how to code -> to building something real.
 
-Named after [Project X Vietnam](https://projectxvietnam.org) - A non-profit organization bridging the gap between academic learning and real-world tech careers.
+A curated set of AI agent skills by [Project X Vietnam](https://projectxvietnam.org) to help you go from idea -> build -> test -> ship with AI.
+
+AI agent skills for vibe coding your own project — clone this, install the skills, and AI agent will pick them up automatically based on what you ask for.
 
 ## Install
 
 ```bash
-git clone <this-repo-url>
+git clone https://Project-X-Vietnam/project-x-vibe-skills
 cd project-x-vibe-skills
 ./setup.sh
 ```
